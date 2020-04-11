@@ -1,0 +1,48 @@
+var readline = require ('readline-sync');
+console.log('\n');
+console.log('Selamat Datang di Travel XYZ');
+console.log('Daftar Tujuan :');
+console.log('1. Kampung Lalang  500.000');
+console.log('2. Banjai          150.000');
+console.log('3. Medan           400.000');
+console.log('\n');
+
+var no = parseInt(readline.question('Masukan Nomor Tujuan: '));
+var harga;
+switch (no) {
+	case 1: harga = 500000; break; 
+	case 2: harga = 150000; break;	
+	case 3: harga = 400000; break;	
+	default: {
+		console.log('Nomor yang anda masukkan tidak tersedia');
+        console.log('Pilih 1 - 3');
+		process.exit(1);
+	}
+}
+var jumlah = parseInt(readline.question('Masukan Jumlah Tiket: '));
+var nama = readline.question('Masukan Nama: ');
+var member = readline.question('Apakah Anda Member? [y/n]: ');
+console.log('\n');
+
+//total harga 
+var totaltiket = harga*jumlah;
+
+//member
+var diskon;
+if (member==('y'||'Y')) {
+diskon = 0.10*totaltiket;
+} else if (member==('n'||'N')) {
+diskon = 0;
+}
+else diskon = 0;
+
+//total harga keseluruhan
+hasil = totaltiket-diskon;
+
+//output
+console.log('Nama               : ' + nama);
+console.log('tiket yang dipesan : ' + jumlah);
+console.log('Harga Tiket        : ' + harga , ' X ' +jumlah);
+console.log('Sub Total          : ' + totaltiket);
+console.log('Diskon             : ' + diskon);
+console.log('Total Bayar        : ' + hasil);
