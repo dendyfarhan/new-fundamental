@@ -1,0 +1,184 @@
+//contoh 1
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tutorial Belajar JavaScript</title>
+<script>
+function tampilkan(){
+var nama_kota=document.getElementById("form1").select1.value;
+var p_kontainer=document.getElementById("container");
+if (nama_kota=="jakarta")
+{
+p_kontainer.innerHTML="Jakarta Ibu kota Republik Indonesia";
+}
+else if (nama_kota=="bandung")
+{
+p_kontainer.innerHTML="Bandung kota kembang";
+}
+else if (nama_kota=="bogor")
+{
+p_kontainer.innerHTML="Bogor kota hujan";
+}
+}
+</script>
+</head>
+<body>
+<h2>Menampilkan Hasil Form HTML dengan JavaScript</h2>
+<form id="form1" name="form1" onsubmit="return false">
+<label for="select1">Pilih Kota: </label>
+<select id="select1" name="select1">
+<option value="jakarta">Jakarta</option>
+<option value="bandung">Bandung</option>
+<option value="bogor">Bogor</option>
+</select>
+<input type="submit" value="Tampilkan Keterangan" onclick="tampilkan()">
+</form>
+<p id="container"></p>
+</body>
+</html>
+
+//contoh 2
+<html>
+<head>
+<title>Belajar JavaScript-Form Register Online</title>
+<script language=javascript>
+function pendaftaran()
+{
+var formulir = document.forms["formulir"];
+var kolom1 = formulir.elements["kolom1"].value;
+var kolom2 = formulir.elements["kolom2"].value;
+var kolom3 = formulir.elements["kolom3"].value;
+var kolom4 = formulir.elements["kolom4"].value;
+var kolom5 = formulir.elements["kolom5"].value;
+var kolom6 = formulir.elements["kolom6"].value;
+var kolom7 = formulir.elements["kolom7"].value;
+var kolom8 = formulir.elements["kolom8"].value;
+var kolom9 = formulir.elements["kolom9"].value;
+if (kolom1 == "")
+{
+confirm("Wrong name");
+}
+else if (kolom2 == "")
+{
+confirm("Wrong birthday ");
+}
+else if (kolom3 == "")
+{
+confirm("wrong adrress");
+}
+else if (kolom4 == "")
+{
+confirm("wrong No.Telp/HP");
+}
+else if (kolom5 == "" || formulir.kolom5.value.indexOf('@',0,'.')==-1)
+{
+confirm("Wrong E-mail ");
+}
+else if (kolom6 == "")
+{
+confirm("Anda belum mengisi kolom Asal Sekolah");
+}
+else if (kolom7 == "")
+{
+confirm("Anda belum mengisi kolom Nama Orang Tua");
+}
+else if (kolom8 == "")
+{
+confirm("Anda belum mengisi kolom Alamat Orang Tua");
+}
+else if (kolom9 == "")
+{
+confirm("Anda belum mengisi kolom Pekerjaan Orang Tua");
+}
+else
+{
+window.open("berhasil.html");
+}
+}
+</script>
+</head>
+<body>
+<h1>REGISTER ONLINE</h1>
+<b><script language="javascript">
+var tanggal = new Date();
+var thn = tanggal.getFullYear();
+var bln = tanggal.getMonth();
+var hr = tanggal.getDay();
+var tgl = tanggal.getDate();
+var namahr = new
+Array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
+var namabln = new Array
+("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","O
+ktober","November","Desember");
+document.write(namahr[hr]+", "+tgl+" "+namabln[bln]+" "+thn);
+</script><b>
+<form name=formulir onsubmit=pendaftaran()>
+<table width="350px">
+<tr>
+<td>Nama Lengkap</td>
+<td><input type="text" name="kolom1" /></td>
+</tr>
+<tr>
+<td>Tempat/Tanggal Lahir</td>
+<td><input type="text" name="kolom2" /></td>
+</tr>
+<tr>
+<td>Jenis Kelamin</td>
+<td><input type="radio" name="jk" value="laki-laki" checked />laki-
+laki<input type="radio" name="jk" value="perempuan" />perempuan</td>
+</tr>
+<tr>
+<td>Alamat</td>
+<td><input type="text" name="kolom3" /></td>
+</tr>
+<tr>
+<td>Agama</td>
+<td><input type="radio" name="agama" value="islam"
+checked/>islam<input type="radio" name="agama" value="Kristen Protestan"
+/>Kristen Protestan<input type="radio" name="agama" value="Kristen Katolik"
+/>Kristen Katolik<input type="radio" name="agama" value="Hindu"
+/>Hindu<input type="radio" name="agama" value="Budha" />Budha</td>
+</tr>
+<tr>
+<td>No Telp/HP</td>
+<td><input type="text" name="kolom4" /></td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="kolom5" /></td>
+</tr>
+<tr>
+<td>Asal Sekolah</td>
+<td><input type="text" name="kolom6" /></td>
+</tr>
+<tr>
+<td>Nama Orang Tua</td>
+<td><input type="text" name="kolom7" /></td>
+</tr>
+<tr>
+<td>Alamat Orang Tua</td>
+<td><input type="text" name="kolom8" /></td>
+</tr>
+<tr>
+<td>Pekerjaan Orang Tua</td>
+<td><input type="text" name="kolom9" /></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="Kirim"
+value="Kirim" /><input type="reset" name="Hapus" value="Hapus" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+//berhasil.html
+<html>
+<head>
+<title>Confirm</title>
+</head>
+<body>
+<center>Selamat Register Berhasil</center>
+</body>
+</html>
